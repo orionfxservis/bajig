@@ -1,6 +1,17 @@
 /* ===== BAJI G - PAKISTANI LADIES FASHION ===== */
 /* Pure CSS - No build tools needed */
 
+/* ===== Jameel Noori Nastaleeq Urdu Font ===== */
+@font-face {
+  font-family: 'JameelNooriNastaleeq';
+  src: url('../fonts/JameelNooriNastaleeq.woff2') format('woff2'),
+       url('../fonts/JameelNooriNastaleeq.woff') format('woff'),
+       url('../fonts/JameelNooriNastaleeq.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg-cream: #F8F4ED;
   --deep-emerald: #0E3A2F;
@@ -27,6 +38,17 @@ body {
   color: var(--dark-text);
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling for iOS */
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title, .cart-title, .checkout-title {
@@ -44,6 +66,8 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(184, 151, 120, 0.2);
+  transition: transform 0.3s ease;
+  will-change: transform;
 }
 
 .nav-container {
@@ -203,17 +227,23 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
 
 /* Mobile Menu */
 .mobile-menu {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
   background: linear-gradient(180deg, var(--deep-emerald) 0%, #1A4639 100%);
   z-index: 1001;
   flex-direction: column;
   padding: 100px 32px 32px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease;
 }
 
 .mobile-menu.active {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .mobile-close {
@@ -277,10 +307,24 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--deep-emerald);
+  background: url('../images/hero-bg.jpg') no-repeat center center;
+  background-size: cover;
   color: var(--light-text);
   text-align: center;
   padding: 100px 24px 80px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(14, 58, 47, 0.85) 0%,
+    rgba(14, 58, 47, 0.5) 50%,
+    rgba(14, 58, 47, 0.85) 100%
+  );
+  z-index: 1;
 }
 
 .hero-pattern {
@@ -289,12 +333,33 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   background-image: radial-gradient(rgba(184, 151, 120, 0.15) 1px, transparent 1px);
   background-size: 24px 24px;
   opacity: 0.4;
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 700px;
+}
+
+.hero-content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130%;
+  height: 130%;
+  background: radial-gradient(
+    circle,
+    rgba(14, 58, 47, 0.9) 0%,
+    rgba(14, 58, 47, 0.7) 40%,
+    rgba(14, 58, 47, 0) 80%
+  );
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(30px);
+  border-radius: 50%;
 }
 
 .hero-badge {
@@ -345,10 +410,11 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
 }
 
 .hero-urdu-name {
-  font-family: 'Noto Nastaliq Urdu', serif;
-  font-size: clamp(32px, 5vw, 56px);
+  font-family: 'JameelNooriNastaleeq', 'Noto Nastaliq Urdu', serif;
+  font-size: clamp(40px, 6vw, 72px);
   color: var(--warm-gold);
-  line-height: 1.6;
+  line-height: 1.4;
+  padding-top: 8px;
 }
 
 .hero-tagline-row {
@@ -368,11 +434,12 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
 }
 
 .hero-urdu-tagline {
-  font-family: 'Noto Nastaliq Urdu', serif;
-  font-size: clamp(20px, 3vw, 32px);
+  font-family: 'JameelNooriNastaleeq', 'Noto Nastaliq Urdu', serif;
+  font-size: clamp(26px, 4vw, 44px);
   color: var(--warm-gold);
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.4;
+  padding-top: 6px;
 }
 
 .hero-desc {
@@ -428,6 +495,28 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
 
 .btn-outline:hover {
   background: rgba(255,255,255,0.1);
+}
+
+.btn-add-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 1px dashed rgba(184, 151, 120, 0.5);
+  background: transparent;
+  color: var(--warm-gold);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-add-home:hover {
+  background: rgba(184, 151, 120, 0.1);
+  border-style: solid;
 }
 
 .btn-emerald {
@@ -732,6 +821,14 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   font-size: 11px;
   letter-spacing: 1.5px;
   color: var(--warm-gold);
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--warm-gold);
+  font-size: 16px;
 }
 
 /* ===== ABOUT ===== */
@@ -1687,6 +1784,8 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* Tablet */
 @media (max-width: 1024px) {
   .about-container {
     gap: 48px;
@@ -1695,9 +1794,15 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
   }
+  .contact-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
+  /* Navbar */
   .nav-links {
     display: none;
   }
@@ -1707,74 +1812,432 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   .menu-toggle {
     display: flex;
   }
+  .nav-container {
+    padding: 0 16px;
+    height: 64px;
+  }
+  .logo-main {
+    font-size: 22px;
+  }
+  .logo-sub {
+    font-size: 8px;
+  }
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 16px 60px;
+    min-height: auto;
+  }
+  .hero-badge {
+    font-size: 9px;
+    padding: 5px 14px;
+    letter-spacing: 2px;
+  }
   .hero-title {
-    letter-spacing: -2px;
+    font-size: 42px;
+    letter-spacing: 3px;
   }
-  .about-container {
-    grid-template-columns: 1fr;
+  .hero-urdu-name {
+    font-size: 28px;
   }
-  .about-features {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-tagline {
+    font-size: 18px;
   }
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .hero-urdu-tagline {
+    font-size: 20px;
   }
-  .contact-form-card {
-    padding: 20px 16px;
+  .hero-desc {
+    font-size: 14px;
+    margin-bottom: 28px;
   }
-  .form-row {
-    grid-template-columns: 1fr;
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
     gap: 12px;
   }
-  .form-row .form-group {
-    margin-bottom: 12px;
+  .btn-gold, .btn-outline {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 14px 28px;
+    font-size: 12px;
+  }
+  .hero-name-row .hero-title,
+  .hero-name-row .hero-urdu-name {
+    padding: 0 12px;
+  }
+  .hero-tagline-row .hero-tagline,
+  .hero-tagline-row .hero-urdu-tagline {
+    padding: 0 10px;
+  }
+
+  /* Marquee */
+  .marquee-img {
+    width: 180px;
+    height: 220px;
+  }
+  .marquee-caption {
+    font-size: 9px;
+  }
+
+  /* Collections */
+  .collections {
+    padding: 48px 16px 60px;
+  }
+  .section-title {
+    font-size: 36px;
+  }
+  .section-desc {
+    font-size: 14px;
   }
   .filter-bar {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
+    position: static;
+    padding: 12px 0;
+  }
+  .filter-buttons {
+    justify-content: center;
+  }
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 11px;
   }
   .filter-search {
     max-width: none;
+  }
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .product-card {
+    border-radius: 16px;
+  }
+  .product-info {
+    padding: 16px;
+  }
+  .product-name {
+    font-size: 18px;
+  }
+  .product-price {
+    font-size: 16px;
+  }
+
+  /* About */
+  .about {
+    padding: 48px 16px;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .about-title {
+    font-size: 36px;
+  }
+  .about-body {
+    font-size: 14px;
+  }
+  .about-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .feature svg {
+    width: 32px;
+    height: 32px;
+  }
+  .feature-title {
+    font-size: 14px;
+  }
+  .feature-sub {
+    font-size: 10px;
+  }
+
+  /* Contact */
+  .contact {
+    padding: 40px 16px 48px;
+  }
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .contact-left .section-title {
+    font-size: 32px;
+  }
+  .contact-intro {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .contact-details {
+    gap: 14px;
+  }
+  .contact-detail-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .contact-detail-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+  .contact-detail-value {
+    font-size: 12px;
+  }
+  .contact-note {
+    padding-left: 44px;
+    font-size: 11px;
+  }
+  .contact-form-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+  .form-header-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .form-header-title {
+    font-size: 18px;
+  }
+  .form-group {
+    margin-bottom: 10px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .form-row .form-group {
+    margin-bottom: 10px;
+  }
+  .form-input {
+    padding: 10px 12px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .form-textarea {
+    min-height: 70px;
+  }
+  .form-submit {
+    padding: 12px 20px;
+  }
+
+  /* Social */
+  .social {
+    padding: 40px 16px;
+  }
+  .social-title {
+    font-size: 28px;
+  }
+  .social-links {
+    gap: 24px;
+  }
+  .social-circle {
+    width: 60px;
+    height: 60px;
+  }
+  .social-circle svg {
+    width: 24px;
+    height: 24px;
+  }
+  .social-name {
+    font-size: 11px;
+  }
+  .social-handle {
+    font-size: 10px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 20px 16px;
+    font-size: 9px;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .modal {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 20px 20px 0 0;
   }
   .modal-body {
     flex-direction: column;
   }
   .modal-image {
     width: 100%;
-    min-height: 300px;
+    min-height: 280px;
+    max-height: 35vh;
   }
   .modal-details {
     width: 100%;
-    padding: 28px;
+    padding: 20px;
   }
   .modal-name {
-    font-size: 28px;
+    font-size: 24px;
   }
-  .form-row {
-    grid-template-columns: 1fr;
+  .modal-price {
+    font-size: 22px;
   }
-  .social-links {
-    gap: 32px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-buttons {
+  .modal-actions {
     flex-direction: column;
-    align-items: center;
+    gap: 12px;
   }
-  .btn-gold, .btn-outline {
+  .qty-control {
     width: 100%;
     justify-content: center;
   }
-  .products-grid {
-    grid-template-columns: 1fr;
+  .modal-add-btn {
+    width: 100%;
   }
-  .about-features {
-    grid-template-columns: 1fr;
+
+  /* Cart Drawer */
+  .cart-drawer {
+    max-width: 100%;
+  }
+  .cart-header {
+    padding: 20px;
+  }
+  .cart-title {
+    font-size: 24px;
+  }
+  .cart-items {
+    padding: 16px 20px;
+  }
+  .cart-item img {
+    width: 64px;
+    height: 64px;
+  }
+  .cart-footer {
+    padding: 16px 20px;
+  }
+
+  /* Checkout */
+  .checkout-overlay {
+    padding: 0;
+    align-items: flex-end;
   }
   .checkout-modal {
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
     padding: 28px 20px;
+  }
+  .checkout-title {
+    font-size: 28px;
+  }
+  .checkout-amount {
+    font-size: 22px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+  .hero-urdu-name {
+    font-size: 24px;
+  }
+  .hero-tagline {
+    font-size: 16px;
+  }
+  .hero-urdu-tagline {
+    font-size: 18px;
+  }
+  .about-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .filter-buttons {
+    gap: 6px;
+  }
+  .filter-btn {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+  .product-image {
+    aspect-ratio: 3/3.5;
+  }
+  .modal-image {
+    min-height: 220px;
+  }
+  .modal-name {
+    font-size: 20px;
+  }
+  .modal-price {
+    font-size: 18px;
+  }
+  .size-btn {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+  .color-swatch {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ===== MOBILE APP IMPROVEMENTS ===== */
+/* Touch-friendly buttons */
+button, .btn-gold, .btn-emerald, .btn-outline, .filter-btn, .size-btn, .nav-link, .mobile-link, .social-link, .product-card, .cart-btn, .menu-toggle {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent text selection on UI elements */
+.navbar, .filter-bar, .cart-header, .modal-actions, .form-header, .social-links, .footer {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Smooth momentum scrolling on mobile */
+.cart-items, .modal-body, .mobile-menu {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* iOS safe area support */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .navbar {
+    padding-top: env(safe-area-inset-top);
+  }
+  .hero {
+    padding-top: calc(100px + env(safe-area-inset-top));
+  }
+}
+
+/* Prevent pull-to-refresh on modals/drawers */
+.cart-drawer, .modal, .checkout-modal {
+  overscroll-behavior: contain;
+}
+
+/* Active state for touch feedback */
+.product-card:active, .btn-gold:active, .btn-emerald:active, .filter-btn:active, .size-btn:active {
+  transform: scale(0.98);
+  transition: transform 0.1s;
+}
+
+/* Hide scrollbar on mobile for cleaner look */
+.cart-items::-webkit-scrollbar, .modal-body::-webkit-scrollbar {
+  width: 4px;
+}
+.cart-items::-webkit-scrollbar-thumb, .modal-body::-webkit-scrollbar-thumb {
+  background: rgba(184, 151, 120, 0.3);
+  border-radius: 4px;
+}
+
+/* Standalone app mode improvements */
+@media (display-mode: standalone) {
+  .navbar {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+  body {
+    padding-top: env(safe-area-inset-top, 0);
   }
 }

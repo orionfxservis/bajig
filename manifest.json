@@ -1,0 +1,24 @@
+{
+  "name": "Baji G - Pakistani Ladies Fashion",
+  "short_name": "Baji G",
+  "description": "Exquisite Pakistani dresses. Grace in Every Thread.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F8F4ED",
+  "theme_color": "#0E3A2F",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./images/dress1.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./images/dress1.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

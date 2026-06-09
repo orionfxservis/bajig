@@ -96,7 +96,106 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProducts();
   setupEventListeners();
   setupScrollSpy();
+  setupMobileOptimizations();
 });
+
+// ===== MOBILE APP OPTIMIZATIONS =====
+function setupMobileOptimizations() {
+  // Prevent double-tap zoom on buttons
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+      e.preventDefault();
+    }
+    lastTouchEnd = now;
+  }, { passive: false });
+
+  // Close mobile menu on swipe left
+  const mobileMenu = document.getElementById('mobileMenu');
+  let touchStartX = 0;
+  mobileMenu.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  mobileMenu.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 80) {
+      mobileMenu.classList.remove('active');
+    }
+  }, { passive: true });
+
+  // Close cart drawer on swipe right
+  const cartDrawer = document.getElementById('cartDrawer');
+  cartDrawer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  cartDrawer.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].screenX;
+    if (touchEndX - touchStartX > 80) {
+      closeCart();
+    }
+  }, { passive: true });
+
+  // Hide navbar on scroll down, show on scroll up
+  let lastScrollY = window.scrollY;
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      navbar.style.transform = 'translateY(-100%)';
+    } else {
+      navbar.style.transform = 'translateY(0)';
+    }
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+
+  // Add transition to navbar
+  navbar.style.transition = 'transform 0.3s ease';
+}
+
+// ===== ADD TO HOME SCREEN =====
+let deferredPrompt = null;
+
+function setupAddToHomeScreen() {
+  const btn = document.getElementById('addToHomeScreen');
+  if (!btn) return;
+
+  // Show button on mobile browsers
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  // Listen for the beforeinstallprompt event (Chrome/Android)
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    btn.style.display = 'inline-flex';
+  });
+
+  // For iOS Safari, always show on mobile
+  if (isMobile && !deferredPrompt) {
+    btn.style.display = 'inline-flex';
+    btn.addEventListener('click', () => {
+      alert('To add Baji G to your home screen:\n\n' +
+        'iPhone/iPad: Tap the Share button (\u2b06\ufe0f) at the bottom, then scroll down and tap "Add to Home Screen".\n\n' +
+        'Android: Tap the menu (\u22ee) and select "Add to Home screen".');
+    });
+    return;
+  }
+
+  btn.addEventListener('click', async () => {
+    if (!deferredPrompt) {
+      alert('To add Baji G to your home screen:\n\n' +
+        'iPhone/iPad: Tap the Share button (\u2b06\ufe0f) at the bottom, then scroll down and tap "Add to Home Screen".\n\n' +
+        'Android: Tap the menu (\u22ee) and select "Add to Home screen".');
+      return;
+    }
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      btn.style.display = 'none';
+    }
+    deferredPrompt = null;
+  });
+}
 
 // ===== MARQUEE =====
 function renderMarquee() {
