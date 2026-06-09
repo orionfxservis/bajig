@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baji G | Pakistani Ladies Fashion | Grace in Every Thread</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+  <!-- ===== ELEGANT NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <div class="logo-icon">B</div>
+        <div class="logo-text">
+          <div class="logo-main">Baji G</div>
+          <div class="logo-sub">EST 2026 &bull; PAKISTAN</div>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#collections" class="nav-link">COLLECTIONS</a></li>
+        <li><a href="#about" class="nav-link">OUR STORY</a></li>
+        <li><a href="#contact" class="nav-link">CONTACT</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#collections" class="nav-search-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          SHOP NOW
+        </a>
+        <button class="cart-btn" id="cartBtn" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-close" id="mobileClose">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <a href="#collections" class="mobile-link">Our Collections</a>
+      <a href="#about" class="mobile-link">Our Story</a>
+      <a href="#contact" class="mobile-link">Contact Us</a>
+      <button class="mobile-cart-btn" id="mobileCartBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        VIEW CART (<span id="mobileCartCount">0</span>)
+      </button>
+      <div class="mobile-footer">HANDCRAFTED IN PAKISTAN &bull; SHIPPED WORLDWIDE</div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-badge">ESTABLISHED 2009 &bull; KARACHI & LAHORE</div>
+      <div class="hero-name-row">
+        <h1 class="hero-title">Baji G</h1>
+        <div class="hero-urdu-name">باجی جی</div>
+      </div>
+      <div class="hero-tagline-row">
+        <p class="hero-tagline">Grace in Every Thread</p>
+        <p class="hero-urdu-tagline">ہر دھاگے میں نفاست</p>
+      </div>
+      <p class="hero-desc">Exquisite dresses for the modern Pakistani woman.<br>Proudly crafted locally &bull; Exported globally</p>
+      <div class="hero-buttons">
+        <a href="#collections" class="btn-gold">
+          DISCOVER THE COLLECTION
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="#about" class="btn-outline">OUR HERITAGE</a>
+      </div>
+    </div>
+    <a href="#collections" class="hero-scroll">
+      SCROLL TO EXPLORE
+      <span class="hero-scroll-line"></span>
+    </a>
+  </section>
+
+  <!-- ===== CONTINUOUS SCROLLING MARQUEE ===== -->
+  <div class="marquee-section">
+    <div class="marquee" id="marquee">
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+    <p class="marquee-caption">HAND-EMBROIDERED &bull; LIMITED PIECES &bull; SHIPPED FROM PAKISTAN</p>
+  </div>
+
+  <!-- ===== COLLECTIONS SECTION ===== -->
+  <section class="collections" id="collections">
+    <div class="section-header">
+      <div class="section-label">CURATED WITH LOVE</div>
+      <h2 class="section-title">Our Collections</h2>
+      <p class="section-desc">Signature Pakistani dresses designed for elegance, comfort, and timeless beauty. Available for local markets and worldwide export.</p>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-buttons" id="filterButtons">
+        <button class="filter-btn active" data-filter="All">All</button>
+        <button class="filter-btn" data-filter="Lawn">Lawn</button>
+        <button class="filter-btn" data-filter="Silk">Silk</button>
+        <button class="filter-btn" data-filter="Formal">Formal</button>
+        <button class="filter-btn" data-filter="Bridal">Bridal</button>
+      </div>
+      <div class="filter-search">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="searchInput" placeholder="Search dresses, silk, bridal...">
+      </div>
+      <select class="filter-sort" id="sortSelect">
+        <option value="default">Featured</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+      </select>
+    </div>
+
+    <div class="products-grid" id="productsGrid"></div>
+    <p class="products-note">All pieces handcrafted in Pakistan &bull; Free shipping on orders above PKR 45,000</p>
+  </section>
+
+  <!-- ===== ABOUT US ===== -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="about-text">
+        <div class="section-label light">SINCE 2009</div>
+        <h2 class="about-title">Our Story.<br>Our Pride.</h2>
+      </div>
+      <div class="about-body">
+        <p>Founded in the heart of Karachi, <strong>Baji G</strong> was born from a deep love for Pakistan's rich textile heritage and the graceful women who wear it.</p>
+        <p>Every dress is lovingly hand-embroidered by skilled artisans across Lahore and Sialkot, using the finest silks, lawns, and chiffons sourced responsibly from within our beloved country.</p>
+        <p>We proudly supply exquisite collections to local boutiques in Lahore, Islamabad, and Karachi, and export to discerning clients across the UK, UAE, Canada, and USA &mdash; carrying the beauty of Pakistan with every stitch.</p>
+      </div>
+    </div>
+
+    <div class="about-features">
+      <div class="feature">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        <div class="feature-title">Handcrafted Artisans</div>
+        <div class="feature-sub">45+ Master Craftsmen</div>
+      </div>
+      <div class="feature">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <div class="feature-title">Global Exports</div>
+        <div class="feature-sub">12 Countries Served</div>
+      </div>
+      <div class="feature">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="feature-title">Trusted Locally</div>
+        <div class="feature-sub">3000+ Happy Clients</div>
+      </div>
+      <div class="feature">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div class="feature-title">Timeless Quality</div>
+        <div class="feature-sub">Lifetime Stitching</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT US ===== -->
+  <section class="contact" id="contact">
+    <div class="contact-wrapper">
+      <div class="contact-left">
+        <div class="section-label">WE ARE HERE FOR YOU</div>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-intro">For custom orders, bulk supply, or export inquiries &mdash; our team in Pakistan responds within hours.</p>
+
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">KARACHI STUDIO</div>
+              <div class="contact-detail-value">Zaib Un Nisa Street, Saddar, Karachi.</div>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">CALL / WHATSAPP</div>
+              <div class="contact-detail-value">+92 337 7775394<br>+92 321 3801179</div>
+              <div class="contact-detail-time">Mon &ndash; Sat, 10am &ndash; 7pm Pst</div>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">RESPONSE TIME</div>
+              <div class="contact-detail-value">Within 3 Hours</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="contact-note">We specialize in personalized fittings, custom colorways, and wholesale orders for boutiques and retailers internationally.</p>
+      </div>
+
+      <div class="contact-right">
+        <form class="contact-form-card" id="contactForm">
+          <div class="form-header">
+            <div class="form-header-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="form-header-title">Send us a Message</div>
+            <div class="form-header-sub">Fill in the details below and we will get back to you</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" name="name" class="form-input" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone / WhatsApp</label>
+              <input type="tel" name="phone" class="form-input" placeholder="+92 3XX XXXXXXX">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <select name="subject" class="form-input form-select">
+              <option value="">Select an option</option>
+              <option value="order">Place an Order</option>
+              <option value="custom">Custom Design Request</option>
+              <option value="wholesale">Wholesale / Export Inquiry</option>
+              <option value="fitting">Fitting / Size Question</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Your Message</label>
+            <textarea name="message" class="form-input form-textarea" placeholder="Your message..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-gold form-submit" id="submitBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            SEND MESSAGE
+          </button>
+
+          <p class="form-success" id="formSuccess">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Message sent! Our Karachi team will reach out within 3 hours.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOCIAL MEDIA ===== -->
+  <section class="social">
+    <div class="social-header">
+      <div class="section-label light">JOIN OUR COMMUNITY</div>
+      <h3 class="social-title">Stay Connected with Baji G</h3>
+      <p>Follow our journey, discover new arrivals, and be the first to shop limited collections.</p>
+    </div>
+    <div class="social-links">
+      <a href="https://instagram.com" target="_blank" class="social-link">
+        <div class="social-circle">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <div class="social-name">Instagram</div>
+        <div class="social-handle">@bajigpakistan</div>
+      </a>
+      <a href="https://facebook.com" target="_blank" class="social-link">
+        <div class="social-circle">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </div>
+        <div class="social-name">Facebook</div>
+        <div class="social-handle">Baji G Couture</div>
+      </a>
+      <a href="https://pinterest.com" target="_blank" class="social-link">
+        <div class="social-circle">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <div class="social-name">Pinterest</div>
+        <div class="social-handle">Baji G Pakistan</div>
+      </a>
+      <a href="https://wa.me/923377775394?text=Hello%20Baji%20G%2C%20I%20am%20interested%20in%20your%20beautiful%20dresses." target="_blank" class="social-link">
+        <div class="social-circle">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="social-name">WhatsApp</div>
+        <div class="social-handle">+92 337 7775394</div>
+      </a>
+    </div>
+    <p class="social-footer">WE BELIEVE IN BEAUTY THAT HONORS TRADITION &bull; MADE FOR PAKISTANI WOMEN &bull; LOVED WORLDWIDE</p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    &copy; <span id="year"></span> Baji G COUTURE &mdash; KARACHI, PAKISTAN. ALL RIGHTS RESERVED. CRAFTED FOR GRACE.
+  </footer>
+
+  <!-- ===== PRODUCT MODAL ===== -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ===== CART DRAWER ===== -->
+  <div class="cart-overlay" id="cartOverlay">
+    <div class="cart-drawer" id="cartDrawer">
+      <div class="cart-header">
+        <div>
+          <div class="cart-title">Your Cart</div>
+          <div class="cart-subtitle"><span id="drawerCartCount">0</span> ITEMS</div>
+        </div>
+        <button class="cart-close" id="cartClose">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer" id="cartFooter">
+        <div class="cart-total-row">
+          <span>TOTAL</span>
+          <span id="cartTotal">PKR 0</span>
+        </div>
+        <p class="cart-note">Taxes &amp; shipping calculated at checkout. Delivery across Pakistan within 4 days.</p>
+        <button class="btn-emerald" id="checkoutBtn">PROCEED TO CHECKOUT</button>
+        <button class="cart-continue" id="cartContinue">CONTINUE SHOPPING</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CHECKOUT MODAL ===== -->
+  <div class="checkout-overlay" id="checkoutOverlay">
+    <div class="checkout-modal">
+      <button class="checkout-close" id="checkoutClose">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div id="checkoutContent">
+        <div class="checkout-title">Checkout</div>
+        <div class="checkout-subtitle">CONFIRM YOUR BEAUTIFUL ORDER</div>
+        <div class="checkout-summary">
+          <div class="checkout-label">ORDER SUMMARY &bull; <span id="checkoutItemCount">0</span> PIECES</div>
+          <div class="checkout-amount" id="checkoutAmount">PKR 0</div>
+        </div>
+        <form class="checkout-form" id="checkoutForm">
+          <input type="text" placeholder="FULL NAME" required>
+          <div class="form-row">
+            <input type="tel" placeholder="PHONE NUMBER" required>
+            <input type="text" placeholder="CITY IN PAKISTAN" value="Lahore" required>
+          </div>
+          <input type="text" placeholder="FULL DELIVERY ADDRESS" required>
+          <button type="submit" class="btn-gold">PLACE SECURE ORDER &bull; CASH ON DELIVERY AVAILABLE</button>
+        </form>
+        <p class="checkout-note">We accept bank transfers &bull; Cash on Delivery &bull; International wire for exports</p>
+      </div>
+      <div class="checkout-success" id="checkoutSuccess">
+        <div class="checkout-spinner"></div>
+        <div class="checkout-thanks">Thank You!</div>
+        <p>Your order is being prepared by our artisans in Pakistan.<br>You will receive a WhatsApp confirmation shortly.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js?v=2"></script>
+</body>
+</html>
