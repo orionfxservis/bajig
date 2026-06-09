@@ -5,56 +5,56 @@
 const products = [
   {
     id: 1, name: "Pista Green Embroidered Suit", price: 28500, category: "Silk",
-    image: "images/dress1.jpg",
+    image: "./images/dress1.jpg",
     description: "Elegant pista green shalwar kameez with intricate thread embroidery and matching dupatta.",
     details: "Premium silk blend with delicate Pakistani hand embroidery. Features a flowing dupatta and tailored shalwar. Perfect for Eid gatherings and formal events. Export quality finish.",
     colors: ["#A8C686", "#B89778", "#3C2F2B"], sizes: ["XS", "S", "M", "L", "XL"]
   },
   {
     id: 2, name: "Maroon Velvet Formal Suit", price: 19800, category: "Formal",
-    image: "images/dress2.jpg",
+    image: "./images/dress2.jpg",
     description: "Rich maroon velvet formal with heavy silver zardozi and crystal embellishments.",
     details: "Luxurious velvet fabric adorned with traditional Pakistani zardozi work. Ideal for weddings and evening functions. Handcrafted by master artisans in Karachi.",
     colors: ["#6B1C2C", "#8C8C8C", "#3F2E2A"], sizes: ["S", "M", "L", "XL"]
   },
   {
     id: 3, name: "Pink Printed Lawn Summer", price: 12400, category: "Lawn",
-    image: "images/dress3.jpg",
+    image: "./images/dress3.jpg",
     description: "Soft pink lawn cotton with digital prints and lightweight chiffon dupatta.",
     details: "Breathable premium lawn perfect for Pakistani summers. Beautiful digital prints with elegant dupatta. A favorite in Lahore, Karachi & Islamabad markets.",
     colors: ["#E8A8C8", "#C5A28F", "#8F6652"], sizes: ["XS", "S", "M", "L"]
   },
   {
     id: 4, name: "Red Bridal Lehenga Set", price: 68500, category: "Bridal",
-    image: "images/dress4.jpg",
+    image: "./images/dress4.jpg",
     description: "Traditional red bridal lehenga with gold gota work and matching jewelry.",
     details: "Authentic Pakistani bridal couture featuring heavy gota, zari and mirror work. Complete with traditional jewelry styling. Perfect for Barat and Walima ceremonies.",
     colors: ["#C41E1E", "#B89778", "#3F2E2A"], sizes: ["S", "M", "L"]
   },
   {
     id: 5, name: "Black Gold Evening Maxi", price: 24900, category: "Formal",
-    image: "images/dress5.jpg",
+    image: "./images/dress5.jpg",
     description: "Stunning black maxi with gold sequin patterns and sheer sleeves.",
     details: "Floor-length evening wear with exquisite gold sequin detailing. Elegant silhouette perfect for formal dinners and receptions. High-end export quality.",
     colors: ["#1A1A1A", "#B89778", "#4A3428"], sizes: ["S", "M", "L", "XL"]
   },
   {
     id: 6, name: "Turquoise Chiffon Elegance", price: 16750, category: "Silk",
-    image: "images/dress6.jpg",
+    image: "./images/dress6.jpg",
     description: "Vibrant turquoise chiffon suit with floral embroidery and printed dupatta.",
     details: "Lightweight chiffon with delicate floral hand embroidery. Comes with a beautifully printed dupatta. Ideal for daytime events and festive occasions across Pakistan.",
     colors: ["#2EAAA8", "#B89778", "#C9A26A"], sizes: ["XS", "S", "M", "L"]
   },
   {
     id: 7, name: "Ivory Gold Formal Dress", price: 31200, category: "Bridal",
-    image: "images/dress7.jpg",
+    image: "./images/dress7.jpg",
     description: "Ivory white formal dress with gold zari cuffs and pearl neckline details.",
     details: "Elegant ivory fabric with gold zari work on cuffs and neckline. Pearl embellishments add timeless grace. Perfect for engagement, Nikah or reception events.",
     colors: ["#F5F0E6", "#B89778", "#8B664A"], sizes: ["S", "M", "L"]
   },
   {
     id: 8, name: "Teal & Yellow Festive Lawn", price: 15400, category: "Lawn",
-    image: "images/dress8.jpg",
+    image: "./images/dress8.jpg",
     description: "Teal blue lawn suit with mustard dupatta and traditional embroidery.",
     details: "Vibrant teal lawn with contrasting mustard dupatta. Traditional embroidery on neckline and sleeves. Perfect for Mehndi, Eid and spring celebrations.",
     colors: ["#1E6B6B", "#B07B2D", "#C9A26A"], sizes: ["XS", "S", "M", "L", "XL"]
