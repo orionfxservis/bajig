@@ -87,17 +87,12 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   text-decoration: none;
 }
 
-.logo-icon {
-  width: 40px;
-  height: 40px;
+.logo-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
   border-radius: 50%;
-  background: var(--deep-emerald);
-  color: var(--light-text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(14, 58, 47, 0.15);
 }
 
 .logo-main {
@@ -307,32 +302,29 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../images/hero-bg.jpg') no-repeat center center;
-  background-size: cover;
+  background: var(--deep-emerald);
   color: var(--light-text);
   text-align: center;
   padding: 100px 24px 80px;
 }
 
-.hero::before {
-  content: '';
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('./images/hero-bg.jpg') center center / cover no-repeat;
+  z-index: 0;
+}
+
+.hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(14, 58, 47, 0.85) 0%,
-    rgba(14, 58, 47, 0.5) 50%,
+    135deg,
+    rgba(14, 58, 47, 0.92) 0%,
+    rgba(14, 58, 47, 0.75) 40%,
+    rgba(14, 58, 47, 0.55) 70%,
     rgba(14, 58, 47, 0.85) 100%
   );
-  z-index: 1;
-}
-
-.hero-pattern {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(184, 151, 120, 0.15) 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.4;
   z-index: 1;
 }
 
@@ -340,26 +332,6 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   position: relative;
   z-index: 2;
   max-width: 700px;
-}
-
-.hero-content::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 130%;
-  height: 130%;
-  background: radial-gradient(
-    circle,
-    rgba(14, 58, 47, 0.9) 0%,
-    rgba(14, 58, 47, 0.7) 40%,
-    rgba(14, 58, 47, 0) 80%
-  );
-  z-index: -1;
-  pointer-events: none;
-  filter: blur(30px);
-  border-radius: 50%;
 }
 
 .hero-badge {
@@ -1822,10 +1794,9 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   .logo-sub {
     font-size: 8px;
   }
-  .logo-icon {
-    width: 34px;
-    height: 34px;
-    font-size: 16px;
+  .logo-img {
+    width: 42px;
+    height: 42px;
   }
 
   /* Hero */
