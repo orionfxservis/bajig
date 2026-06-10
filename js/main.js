@@ -58,6 +58,13 @@ const products = [
     description: "Teal blue lawn suit with mustard dupatta and traditional embroidery.",
     details: "Vibrant teal lawn with contrasting mustard dupatta. Traditional embroidery on neckline and sleeves. Perfect for Mehndi, Eid and spring celebrations.",
     colors: ["#1E6B6B", "#B07B2D", "#C9A26A"], sizes: ["XS", "S", "M", "L", "XL"]
+  },
+  {
+    id: 9, name: "Slate Grey Office Trouser Suit", price: 18500, category: "Working Lady",
+    image: "./images/working_lady.png",
+    description: "Tailored office wear salwar trouser and shirt set in premium slate grey.",
+    details: "Specially designed for the modern working woman in Pakistan. Crafted with high-grade, breathable fabric that resists creases, featuring subtle thread embroidery on the collar and cuffs. Comfort meets absolute grace.",
+    colors: ["#708090", "#0E3A2F", "#B89778"], sizes: ["S", "M", "L", "XL"]
   }
 ];
 
@@ -97,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
   setupScrollSpy();
   setupMobileOptimizations();
+  setupAddToHomeScreen();
 });
 
 // ===== MOBILE APP OPTIMIZATIONS =====

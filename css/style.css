@@ -306,12 +306,16 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   color: var(--light-text);
   text-align: center;
   padding: 100px 24px 80px;
+  overflow: hidden;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('./images/hero-bg.jpg') center center / cover no-repeat;
+  background: url('../images/bg/bg-03.png') center center / cover no-repeat;
+  filter: blur(8px);
+  transform: scale(1.1);
+  opacity: 0.85;
   z-index: 0;
 }
 
@@ -320,10 +324,10 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(14, 58, 47, 0.92) 0%,
-    rgba(14, 58, 47, 0.75) 40%,
-    rgba(14, 58, 47, 0.55) 70%,
-    rgba(14, 58, 47, 0.85) 100%
+    rgba(14, 58, 47, 0.65) 0%,
+    rgba(14, 58, 47, 0.45) 40%,
+    rgba(14, 58, 47, 0.25) 70%,
+    rgba(14, 58, 47, 0.55) 100%
   );
   z-index: 1;
 }
@@ -841,6 +845,11 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   font-weight: 600;
 }
 
+.about-body .about-signature {
+  color: var(--warm-gold);
+  margin-top: 24px;
+}
+
 .about-features {
   max-width: 1100px;
   margin: 64px auto 0;
@@ -970,7 +979,7 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   border-radius: 20px;
   padding: 24px 28px;
   box-shadow: 0 12px 40px -10px rgba(0,0,0,0.08);
-  border: 1px solid rgba(184, 151, 120, 0.1);
+  border: 2px solid var(--warm-gold);
 }
 
 .form-header {
@@ -1036,7 +1045,7 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
   width: 100%;
   padding: 10px 14px;
   border-radius: 10px;
-  border: 1.5px solid rgba(184, 151, 120, 0.2);
+  border: 1.5px solid var(--warm-gold);
   background: #FAF8F4;
   font-family: inherit;
   font-size: 13px;
