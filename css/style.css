@@ -1810,7 +1810,7 @@ h1, h2, h3, .logo-main, .hero-title, .section-title, .about-title, .social-title
 
   /* Hero */
   .hero {
-    padding: 80px 16px 60px;
+    padding: 80px 16px 140px;
     min-height: auto;
   }
   .hero-badge {
