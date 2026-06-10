@@ -1,5 +1,5 @@
 // Baji G - Service Worker for offline support
-const CACHE_NAME = 'baji-g-v2';
+const CACHE_NAME = 'baji-g-v3';
 const urlsToCache = [
   './',
   './index.html',
@@ -14,10 +14,15 @@ const urlsToCache = [
   './images/dress6.jpg',
   './images/dress7.jpg',
   './images/dress8.jpg',
-  './images/working_lady.png'
+  './images/working_lady.png',
+  './images/logo/icon-512.png',
+  './images/logo/icon-72.png',
+  './images/logo/logo.png',
+  './images/bg/bg-03.png'
 ];
 
 self.addEventListener('install', event => {
+  self.skipWaiting(); // Force the new service worker to become active immediately
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
   );
@@ -33,7 +38,7 @@ self.addEventListener('activate', event => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim()) // Claim clients immediately to update cache
   );
 });
 
